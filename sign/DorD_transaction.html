@@ -1,0 +1,155 @@
+<html>
+    <title>Transaction form</title>
+    <style>
+        
+        .outer{
+            border:5px solid red;
+            border-left-width: 2px;
+            border-right-width: 2px;
+            border-spacing: 10px;
+            background-color: cornsilk;
+            border-radius: 10px 25px 10px 25px;
+            
+        }
+        .next{
+            padding:10px 10px 10px 10px;
+        }
+        
+        h1 {
+            text-shadow: 0 0 3px #FF0000;
+            }
+        .error{
+            color: red;
+        }
+        #checkbox{
+            border: 2px solid gray;
+            
+        }
+        ol{
+            color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            font-size: 18px;
+        }
+    </style>
+    <body>
+    
+        <div class="outer">
+            <div class="next">
+        <h1>
+            Read all instruction carefully and agree with that to proceed transaction.<span class="error">*</span></h1>
+            <div >
+            <!-- all instructions and conditions follow by farmer-->
+                <span style="color: crimson">Note:</span>
+                <ol>
+                    <li>
+                        All information should be fill correctly.
+                    </li>
+                    <li>
+                        If any incorrect information found then may result into blacklisting your account.
+                    </li>
+                    <li>
+                        If you are not satisfied with provided information then you can apply for sample product below.
+                    </li>
+                    <li>
+                        Quality of products and rate are define by Indian Government Standards and as per defined rate Distributor/dealers have to buy it.
+                    </li>
+                    <li>
+                        If (Crop) product not found as per expectation or  rate is more than  Distributor /Dealer expected as per Government's Standards then they have ability to abort transaction .
+                        
+                    </li>
+                    <li>
+                        All information is monitored by Indian Government.
+                    </li>
+                    <li>
+                        For blocking your account Indian government is not responsible.
+                    </li>
+                    <li>
+                        If you take objection on blocking your account, if found guilty then the   5000/- rupees penalty with 2 weeks of jail will be announced.
+                    </li>
+                    <li>
+                        2&#37; Government tax will be applied to any transaction.
+                    </li>
+                    <li>
+                        Fill below transaction form to proceed .
+            &nbsp;&nbsp;(Remainder : <span class="error">* required field</span>)
+                    </li>
+                </ol>
+            
+                
+            </div>
+                <div>
+                    <!-- Contents of form is listed below -->
+                            <div class="container">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div id="div_login">
+                    <h1>Distributor/Dealer Transaction form</h1>
+                    <p><span class="error">* required field</span></p>
+                    <span class="error"><?php echo $mainErr;?></span>
+                    <div>
+                        <input type="radio" name="box" value = "farmer"/>Farmer
+                        <input type="radio" name="box" value ="Distributor"/>Distributor/Dealer
+                        <span class="error">* <?php echo $OptionErr;?></span>
+                    </div>
+                    <div>
+                        Full Name:<br>
+                        <input type="text" class="textbox" id="full_uname" name="full_uname" placeholder="Lastname Middle Firstname" />
+                        <span class="error">* <?php echo $nameErr;?></span>
+                        <br><br>
+                    </div>
+                    
+                    <div>
+                        Username:<br>
+                        <input type="text" class="textbox" id="txt_uname" name="uname" placeholder="Username" />
+                        <span class="error">* <?php echo $UserErr;?></span><br><br>
+                    </div>
+                    <div>
+                        Password:<br>
+                        <input type="password" class="textbox" id="txt_uname" name="pwd" placeholder="Password"/>
+                        <span class="error">* <?php echo $passErr;?></span><br><br>
+                    </div>
+                    <div>
+                        Confirm Password:<br>
+                        <input type="password" class="textbox" id="txt_uname" name="cpwd" placeholder="CPassword"/>
+                        <span class="error">* <?php echo $cpassErr;?></span><br><br>
+                    </div>
+                    <div>
+                        Adhar Card no:<br>
+                        <input type="number" maxlength="16" minlength="16" size="16" class="textbox" id="adharcard"
+                               name="adhar" placeholder="AdharCard number"/>
+                        <span class="error">* <?php echo $adharErr;?></span><br><br>
+                        
+                    </div>
+                     <div>
+                        Phone Number:<br>
+                        <input name="phno"  class="textbox" size="10" placeholder="Phone number"/>
+                        <span class="error">* <?php echo $phnoErr;?></span><br><br>
+                    </div>
+                    <div>
+                        Address:<br>
+                        <textarea name="address" rows="5" cols="40" placeholder="Detail Address"></textarea>
+                        <span class="error">* <?php echo $addressErr;?></span><br><br>
+                    </div>
+                     <div>
+                        City:<br>
+                        <input type="text" class="textbox" id="textbox" name="city" placeholder="City" />
+                        <span class="error">* <?php echo $CityErr;?></span><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" style ="text-align:center " value="Sign Up" name="but_submit" id="but_submit" />
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+                
+                </div>
+            
+                <input type="checkbox" id="checkbox"/>I agree to <span style="color: aquamarine">terms of service</span>
+                <p style="color: black">Check here to indicate that you have read and agree to the terms of the 
+                    <span  style="color: crimson">Indian Government.</span></p>
+                
+        </div>
+        </div>
+    
+    </body>
+</html>
