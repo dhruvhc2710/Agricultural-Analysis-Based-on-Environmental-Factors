@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.b1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 25px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+
+<h2>Before Go to the website Sign in by clicking on below..</h2>
+
+<button class="b1" style="vertical-align:middle" onclick="document.location='http:sign/index.php';"><span>START NOW </span></button>
+
+</body>
+</html>
